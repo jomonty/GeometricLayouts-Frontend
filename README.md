@@ -1,7 +1,7 @@
 # GeometricLayouts-Frontend
 
 ## Summary
-This is the frontend for my GeometricLayouts projects ([full details](https://github.com/jomonty/GeometricLayouts)). It's a simple website to showcase one part of the server functionality, namely the api/geometry/verticesbygridref route. It's current [hosted](https://geometric-layouts-frontend.vercel.app/).
+This is the frontend for my GeometricLayouts project ([full details](https://github.com/jomonty/GeometricLayouts)). It's a simple website to showcase one part of the server functionality, namely the api/geometry/verticesbygridref route. It's current [hosted](https://geometric-layouts-frontend.vercel.app/).
 <br>
 <br>
 
