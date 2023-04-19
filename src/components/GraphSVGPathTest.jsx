@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const Graph2 = ({ vertices }) => {
+const GraphSVGPathTest = ({ vertices }) => {
   const [trianglePath, setTrianglePath] = useState();
   useEffect(() => {
     const updatedPath = formatSVGPath(vertices);
@@ -49,4 +49,4 @@ const Graph2 = ({ vertices }) => {
     </div>
   );
 };
-export default Graph2;
+export default GraphSVGPathTest;
