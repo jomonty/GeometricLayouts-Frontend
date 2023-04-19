@@ -22,6 +22,7 @@ I used pnpm for package management, but npm commands will work fine for the belo
     ```sh
     pnpm install
     ```
+* Update the proxy in vite.config to localhost and the port the server is running on
 * Then run the web app in development
     ```sh
     pnpm run dev
