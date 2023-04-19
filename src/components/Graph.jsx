@@ -1,10 +1,7 @@
 import { useEffect } from "react";
 import Plot from "react-plotly.js";
 
-const Graph = ({ vertices }) => {
-  // if (vertices === undefined) {
-  //   return <></>;
-  // }
+const Graph = ({ vertices, grid }) => {
   const formatSVGPath = (vertices) => {
     return `M ${vertices.vertex1.x} ${vertices.vertex1.y} L ${vertices.vertex2.x} ${vertices.vertex2.y} L ${vertices.vertex3.x} ${vertices.vertex3.y} Z`;
   };
@@ -50,26 +47,23 @@ const Graph = ({ vertices }) => {
 
   const layout = {
     shapes: shapes,
-    // datarevision: revision,
-    // width: 1000,
-    // height: 1000,
     margin: {
       pad: 20,
     },
     xaxis: {
-      range: [-2, 62],
+      range: [-1, grid.gridWidth + 1],
       fixedrange: true,
       side: "top",
       zeroline: false,
       tick0: 0,
-      dtick: 10,
+      dtick: grid.gridSquareSideLength,
     },
     yaxis: {
-      range: [62, -2],
+      range: [grid.gridHeight + 1, -1],
       fixedrange: true,
       zeroline: false,
       tick0: 0,
-      dtick: 10,
+      dtick: grid.gridSquareSideLength,
     },
   };
 

@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 
 import { getVerticesByGridRef } from "../api/APIHandler";
+import Instructions from "./Instructions";
 
-const GridRefInput = ({ setVertices }) => {
+const GridRefInput = ({ setVertices, setGrid }) => {
   const [alertOpen, setAlertOpen] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
   const [request, setRequest] = useState({
@@ -20,7 +21,13 @@ const GridRefInput = ({ setVertices }) => {
     const response = await getVerticesByGridRef(request);
     const data = await response.json();
     if (response.status === 200) {
+      const updatedGrid = {
+        gridHeight: parseInt(request.gridHeight),
+        gridWidth: parseInt(request.gridWidth),
+        gridSquareSideLength: parseInt(request.gridSquareSideLength),
+      };
       setVertices(data);
+      setGrid(updatedGrid);
     } else {
       setAlertOpen(true);
       setAlertMessage(data);
@@ -81,7 +88,7 @@ const GridRefInput = ({ setVertices }) => {
           </div>
           <div className="flex w-9/12 flex-col justify-start">
             <label className="text-green-950" htmlFor="gridWidth">
-              Grid Height
+              Grid Width
             </label>
             <input
               className="mt-2 pl-3 shadow"
@@ -94,7 +101,7 @@ const GridRefInput = ({ setVertices }) => {
           </div>
           <div className="flex w-9/12 flex-col justify-start">
             <label className="text-green-950" htmlFor="gridSquareSideLength">
-              Grid Height
+              Grid Square Side Length
             </label>
             <input
               className="mt-2 pl-3 shadow"
@@ -106,7 +113,8 @@ const GridRefInput = ({ setVertices }) => {
             />
           </div>
         </div>
-        <div>
+        <div className="flex justify-center gap-x-5">
+          <Instructions />
           <button
             className="my-6 rounded border border-green-700 bg-transparent px-4 py-2 font-semibold text-green-700 hover:border-transparent hover:bg-green-600 hover:text-white"
             type="submit"

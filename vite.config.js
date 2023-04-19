@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://localhost:5209",
+        target: "https://api20230419144326.azurewebsites.net",
         changeOrigin: true,
         secure: false,
         ws: true,
