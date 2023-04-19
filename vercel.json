@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path(.*)",
+      "destination": "https://api20230419144326.azurewebsites.net/api/:path"
+    },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
