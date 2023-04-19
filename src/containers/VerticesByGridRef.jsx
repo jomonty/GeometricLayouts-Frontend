@@ -11,9 +11,11 @@ const VerticesByGridRef = () => {
   });
 
   return (
-    <main>
+    <main className="container mx-auto flex flex-col items-center justify-center">
       <GridRefInput setVertices={setVertices} />
-      <Graph vertices={vertices} />
+      <div className="lg:h-8/12 md:h-10/12 flex aspect-square h-full w-full items-center justify-center md:w-10/12 lg:w-8/12">
+        <Graph vertices={vertices} />
+      </div>
     </main>
   );
 };
